@@ -1,0 +1,1402 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vaplux | Tecnología Premium y Reparaciones Especializadas</title>
+  <meta name="description" content="Vaplux - Especialistas en tecnología premium: iPhones, dispositivos electrónicos, vapes y reparaciones técnicas certificadas. Calidad garantizada y atención profesional.">
+  
+  <!-- Favicon -->
+  <link rel="icon" href="assets/logo.PNG" type="image/png">
+  
+  <!-- External Libraries -->
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  
+  <style>
+    /* ===== SISTEMA DE DISEÑO PROFESIONAL ===== */
+    :root {
+      /* Colores principales de marca */
+      --brand-primary: #002c5f;
+      --brand-secondary: #0066cc;
+      --brand-accent: #00bcd4;
+      --brand-light: #e3f2fd;
+      
+      /* Colores de estado */
+      --success: #4caf50;
+      --warning: #ff9800;
+      --error: #f44336;
+      --info: #2196f3;
+      
+      /* Escala de grises profesional */
+      --gray-50: #fafafa;
+      --gray-100: #f5f5f5;
+      --gray-200: #eeeeee;
+      --gray-300: #e0e0e0;
+      --gray-400: #bdbdbd;
+      --gray-500: #9e9e9e;
+      --gray-600: #757575;
+      --gray-700: #616161;
+      --gray-800: #424242;
+      --gray-900: #212121;
+      
+      /* Tipografía */
+      --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      --font-weight-normal: 400;
+      --font-weight-medium: 500;
+      --font-weight-semibold: 600;
+      --font-weight-bold: 700;
+      
+      /* Espaciado consistente */
+      --spacing-xs: 0.25rem;
+      --spacing-sm: 0.5rem;
+      --spacing-md: 1rem;
+      --spacing-lg: 1.5rem;
+      --spacing-xl: 2rem;
+      --spacing-2xl: 3rem;
+      --spacing-3xl: 4rem;
+      
+      /* Bordes y sombras */
+      --border-radius-sm: 8px;
+      --border-radius-md: 12px;
+      --border-radius-lg: 16px;
+      --border-radius-xl: 20px;
+      
+      --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
+      --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.1);
+      --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.12);
+      --shadow-xl: 0 16px 48px rgba(0, 0, 0, 0.15);
+      
+      /* Transiciones */
+      --transition-fast: 0.15s ease;
+      --transition-normal: 0.3s ease;
+      --transition-slow: 0.5s ease;
+      
+      /* Gradientes de marca */
+      --gradient-primary: linear-gradient(135deg, var(--brand-primary) 0%, var(--brand-secondary) 100%);
+      --gradient-accent: linear-gradient(135deg, var(--brand-secondary) 0%, var(--brand-accent) 100%);
+      --gradient-overlay: linear-gradient(135deg, rgba(0, 44, 95, 0.9) 0%, rgba(0, 102, 204, 0.8) 100%);
+    }
+
+    /* ===== RESET Y BASE ===== */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: var(--font-primary);
+      line-height: 1.6;
+      color: var(--gray-800);
+      background: var(--gray-50);
+      overflow-x: hidden;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 var(--spacing-md);
+    }
+
+    /* ===== NAVEGACIÓN PROFESIONAL ===== */
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--gray-200);
+      z-index: 1000;
+      transition: var(--transition-normal);
+    }
+
+    .navbar.scrolled {
+      background: rgba(255, 255, 255, 0.98);
+      box-shadow: var(--shadow-md);
+    }
+
+    .nav-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: var(--spacing-md) 0;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding-left: var(--spacing-md);
+      padding-right: var(--spacing-md);
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: var(--spacing-sm);
+      font-size: 1.5rem;
+      font-weight: var(--font-weight-bold);
+      color: var(--brand-primary);
+      text-decoration: none;
+    }
+
+    .nav-logo img {
+      width: 40px;
+      height: 40px;
+      border-radius: var(--border-radius-sm);
+    }
+
+    .nav-menu {
+      display: flex;
+      list-style: none;
+      gap: var(--spacing-xl);
+      align-items: center;
+    }
+
+    .nav-item {
+      position: relative;
+    }
+
+    .nav-link {
+      color: var(--gray-700);
+      text-decoration: none;
+      font-weight: var(--font-weight-medium);
+      padding: var(--spacing-sm) var(--spacing-md);
+      border-radius: var(--border-radius-sm);
+      transition: var(--transition-normal);
+      position: relative;
+      display: flex;
+      align-items: center;
+      gap: var(--spacing-xs);
+    }
+
+    .nav-link:hover {
+      color: var(--brand-primary);
+      background: var(--brand-light);
+    }
+
+    .nav-link.has-dropdown::after {
+      content: '▼';
+      font-size: 0.7rem;
+      transition: var(--transition-fast);
+    }
+
+    .nav-item:hover .nav-link.has-dropdown::after {
+      transform: rotate(180deg);
+    }
+
+    /* Estilos del dropdown */
+    .dropdown-menu {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background: white;
+      border-radius: var(--border-radius-md);
+      box-shadow: var(--shadow-xl);
+      min-width: 220px;
+      padding: var(--spacing-sm);
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(-10px);
+      transition: var(--transition-normal);
+      z-index: 1000;
+      border: 1px solid var(--gray-200);
+    }
+
+    .dropdown-menu::before {
+      content: '';
+      position: absolute;
+      top: -15px;
+      left: 0;
+      right: 0;
+      height: 15px;
+      background: transparent;
+    }
+
+    .nav-item:hover .dropdown-menu,
+    .dropdown-menu:hover {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+
+    .dropdown-link {
+      display: block;
+      padding: var(--spacing-sm) var(--spacing-md);
+      color: var(--gray-700);
+      text-decoration: none;
+      border-radius: var(--border-radius-sm);
+      transition: var(--transition-fast);
+      font-size: 0.9rem;
+    }
+
+    .dropdown-link:hover {
+      background: var(--brand-light);
+      color: var(--brand-primary);
+      transform: translateX(4px);
+    }
+
+    .dropdown-divider {
+      height: 1px;
+      background: var(--gray-200);
+      margin: var(--spacing-xs) var(--spacing-md);
+    }
+
+    .nav-cta {
+      background: var(--gradient-primary);
+      color: white !important;
+      padding: var(--spacing-md) var(--spacing-lg);
+      border-radius: var(--border-radius-md);
+      font-weight: var(--font-weight-semibold);
+    }
+
+    .nav-cta:hover {
+      background: var(--gradient-accent);
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-md);
+    }
+
+    /* Mobile menu toggle */
+    .nav-toggle {
+      display: none;
+      flex-direction: column;
+      gap: 4px;
+      cursor: pointer;
+      padding: var(--spacing-sm);
+      border-radius: var(--border-radius-sm);
+      transition: var(--transition-normal);
+    }
+
+    .nav-toggle span {
+      width: 25px;
+      height: 3px;
+      background: var(--gray-700);
+      border-radius: 2px;
+      transition: var(--transition-fast);
+    }
+
+    .nav-toggle:hover span {
+      background: var(--brand-primary);
+    }
+
+    /* ===== HERO SECTION PRINCIPAL ===== */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      background: var(--gradient-primary);
+      color: white;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: url('assets/IMG_0289 (1).jpg') center/cover;
+      opacity: 0.1;
+      z-index: 1;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--spacing-sm);
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      padding: var(--spacing-sm) var(--spacing-lg);
+      border-radius: var(--border-radius-xl);
+      font-size: 0.9rem;
+      font-weight: var(--font-weight-medium);
+      margin-bottom: var(--spacing-xl);
+      margin-top: calc(var(--spacing-xl) * 3);
+      backdrop-filter: blur(10px);
+    }
+
+    .hero-title {
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      font-weight: var(--font-weight-bold);
+      margin-bottom: var(--spacing-lg);
+      line-height: 1.2;
+    }
+
+    .hero-subtitle {
+      font-size: 1.25rem;
+      color: rgba(255, 255, 255, 0.9);
+      margin-bottom: var(--spacing-2xl);
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+      line-height: 1.6;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: var(--spacing-md);
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--spacing-sm);
+      padding: var(--spacing-md) var(--spacing-xl);
+      border-radius: var(--border-radius-md);
+      text-decoration: none;
+      font-weight: var(--font-weight-semibold);
+      transition: var(--transition-normal);
+      border: 2px solid transparent;
+      min-width: 180px;
+      justify-content: center;
+    }
+
+    .btn-primary {
+      background: white;
+      color: var(--brand-primary);
+    }
+
+    .btn-primary:hover {
+      background: var(--gray-100);
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: white;
+      border-color: rgba(255, 255, 255, 0.3);
+    }
+
+    .btn-outline:hover {
+      background: rgba(255, 255, 255, 0.1);
+      border-color: white;
+    }
+
+    /* ===== SECCIONES PRINCIPALES ===== */
+    .section {
+      padding: var(--spacing-3xl) 0;
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: var(--spacing-3xl);
+    }
+
+    .section-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--spacing-sm);
+      background: var(--brand-light);
+      color: var(--brand-primary);
+      padding: var(--spacing-sm) var(--spacing-lg);
+      border-radius: var(--border-radius-xl);
+      font-size: 0.9rem;
+      font-weight: var(--font-weight-medium);
+      margin-bottom: var(--spacing-lg);
+    }
+
+    .section-title {
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: var(--font-weight-bold);
+      color: var(--gray-900);
+      margin-bottom: var(--spacing-md);
+      line-height: 1.2;
+    }
+
+    .section-subtitle {
+      font-size: 1.1rem;
+      color: var(--gray-600);
+      max-width: 600px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+
+    /* ===== GRID DE PRODUCTOS ===== */
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: var(--spacing-xl);
+    }
+
+    .product-card {
+      background: white;
+      border-radius: var(--border-radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow-md);
+      transition: var(--transition-normal);
+      position: relative;
+    }
+
+    .product-card:hover {
+      transform: translateY(-8px);
+      box-shadow: var(--shadow-xl);
+    }
+
+    .product-image {
+      height: 250px;
+      background: var(--gray-200);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .product-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: var(--transition-normal);
+    }
+
+    .product-card:hover .product-image img {
+      transform: scale(1.05);
+    }
+
+    .product-badge {
+      position: absolute;
+      top: var(--spacing-md);
+      left: var(--spacing-md);
+      background: var(--brand-accent);
+      color: white;
+      padding: var(--spacing-xs) var(--spacing-sm);
+      border-radius: var(--border-radius-sm);
+      font-size: 0.8rem;
+      font-weight: var(--font-weight-semibold);
+    }
+
+    .product-content {
+      padding: var(--spacing-xl);
+    }
+
+    .product-category {
+      color: var(--brand-primary);
+      font-size: 0.9rem;
+      font-weight: var(--font-weight-medium);
+      margin-bottom: var(--spacing-sm);
+    }
+
+    .product-title {
+      font-size: 1.25rem;
+      font-weight: var(--font-weight-bold);
+      color: var(--gray-900);
+      margin-bottom: var(--spacing-sm);
+    }
+
+    .product-description {
+      color: var(--gray-600);
+      margin-bottom: var(--spacing-lg);
+      line-height: 1.6;
+    }
+
+    .product-price {
+      display: flex;
+      align-items: center;
+      gap: var(--spacing-sm);
+      margin-bottom: var(--spacing-lg);
+    }
+
+    .price-current {
+      font-size: 1.25rem;
+      font-weight: var(--font-weight-bold);
+      color: var(--brand-primary);
+    }
+
+    .price-original {
+      font-size: 0.9rem;
+      color: var(--gray-500);
+      text-decoration: line-through;
+    }
+
+    /* ===== GRID DE SERVICIOS ===== */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: var(--spacing-xl);
+    }
+
+    .service-card {
+      background: white;
+      padding: var(--spacing-2xl);
+      border-radius: var(--border-radius-lg);
+      text-align: center;
+      box-shadow: var(--shadow-md);
+      transition: var(--transition-normal);
+      border: 1px solid var(--gray-200);
+    }
+
+    .service-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-lg);
+      border-color: var(--brand-accent);
+    }
+
+    .service-icon {
+      width: 80px;
+      height: 80px;
+      background: var(--gradient-primary);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto var(--spacing-lg);
+      font-size: 2rem;
+      color: white;
+    }
+
+    .service-title {
+      font-size: 1.25rem;
+      font-weight: var(--font-weight-bold);
+      color: var(--gray-900);
+      margin-bottom: var(--spacing-md);
+    }
+
+    .service-description {
+      color: var(--gray-600);
+      line-height: 1.6;
+      margin-bottom: var(--spacing-lg);
+    }
+
+    .service-link {
+      color: var(--brand-primary);
+      text-decoration: none;
+      font-weight: var(--font-weight-semibold);
+      display: inline-flex;
+      align-items: center;
+      gap: var(--spacing-xs);
+    }
+
+    .service-link:hover {
+      color: var(--brand-accent);
+    }
+
+    /* ===== SECCIÓN CONTACTO ===== */
+    .contact-section {
+      background: var(--gray-900);
+      color: white;
+    }
+
+    .contact-section .section-title {
+      color: white;
+    }
+
+    .contact-section .section-subtitle {
+      color: rgba(255, 255, 255, 0.9);
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: var(--spacing-2xl);
+    }
+
+    .contact-card {
+      text-align: center;
+    }
+
+    .contact-icon {
+      width: 60px;
+      height: 60px;
+      background: var(--gradient-accent);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto var(--spacing-md);
+      font-size: 1.5rem;
+    }
+
+    .contact-title {
+      font-size: 1.1rem;
+      font-weight: var(--font-weight-semibold);
+      margin-bottom: var(--spacing-sm);
+    }
+
+    .contact-info {
+      color: rgba(255, 255, 255, 0.8);
+      line-height: 1.6;
+    }
+
+    .contact-link {
+      color: var(--brand-accent);
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: var(--spacing-xs);
+      transition: var(--transition-normal);
+    }
+
+    .contact-link:hover {
+      color: white;
+      transform: translateX(4px);
+    }
+
+    /* ===== MAPA DE UBICACIÓN ===== */
+    .location-map {
+      margin-top: var(--spacing-3xl);
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: var(--border-radius-xl);
+      padding: var(--spacing-xl);
+      backdrop-filter: blur(10px);
+    }
+
+    .map-container {
+      border-radius: var(--border-radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow-xl);
+      margin-bottom: var(--spacing-lg);
+    }
+
+    .map-info {
+      display: flex;
+      align-items: center;
+      gap: var(--spacing-lg);
+      background: rgba(255, 255, 255, 0.08);
+      padding: var(--spacing-lg);
+      border-radius: var(--border-radius-md);
+      border-left: 4px solid var(--brand-accent);
+    }
+
+    .map-info-icon {
+      font-size: 2.5rem;
+      color: var(--brand-accent);
+      flex-shrink: 0;
+    }
+
+    .map-info-text h4 {
+      font-size: 1.2rem;
+      font-weight: var(--font-weight-semibold);
+      margin-bottom: var(--spacing-xs);
+      color: white;
+    }
+
+    .map-info-text p {
+      color: rgba(255, 255, 255, 0.8);
+      line-height: 1.6;
+      margin: 0;
+    }
+
+    @media (max-width: 768px) {
+      .location-map {
+        padding: var(--spacing-lg);
+      }
+
+      .map-container iframe {
+        height: 300px !important;
+      }
+
+      .map-info {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .map-info-icon {
+        font-size: 2rem;
+      }
+    }
+
+    /* ===== FOOTER PROFESIONAL ===== */
+    .footer {
+      background: var(--gray-900);
+      color: white;
+      padding: var(--spacing-2xl) 0 var(--spacing-lg);
+      border-top: 1px solid var(--gray-800);
+    }
+
+    .footer-content {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: var(--spacing-2xl);
+      margin-bottom: var(--spacing-xl);
+    }
+
+    .footer-section h4 {
+      font-size: 1.1rem;
+      font-weight: var(--font-weight-semibold);
+      margin-bottom: var(--spacing-md);
+      color: var(--brand-accent);
+    }
+
+    .footer-links {
+      list-style: none;
+    }
+
+    .footer-links li {
+      margin-bottom: var(--spacing-sm);
+    }
+
+    .footer-links a {
+      color: rgba(255, 255, 255, 0.8);
+      text-decoration: none;
+      transition: var(--transition-normal);
+    }
+
+    .footer-links a:hover {
+      color: var(--brand-accent);
+    }
+
+    .footer-bottom {
+      text-align: center;
+      padding-top: var(--spacing-lg);
+      border-top: 1px solid var(--gray-800);
+      color: rgba(255, 255, 255, 0.6);
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 768px) {
+      .nav-toggle {
+        display: flex;
+      }
+
+      .nav-menu {
+        position: fixed;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: white;
+        flex-direction: column;
+        padding: var(--spacing-lg);
+        box-shadow: var(--shadow-lg);
+        transform: translateY(-100%);
+        opacity: 0;
+        visibility: hidden;
+        transition: var(--transition-normal);
+        gap: var(--spacing-md);
+        align-items: stretch;
+        z-index: 999;
+      }
+
+      .nav-menu.active {
+        transform: translateY(0);
+        opacity: 1;
+        visibility: visible;
+      }
+
+      .nav-item .dropdown-menu {
+        position: static;
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+        box-shadow: none;
+        border: 1px solid var(--gray-200);
+        margin-top: var(--spacing-sm);
+        border-radius: var(--border-radius-sm);
+      }
+
+      .nav-link.has-dropdown::after {
+        content: '▼';
+        margin-left: auto;
+      }
+
+      .hero-actions {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .products-grid,
+      .services-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* ===== ANIMACIONES ===== */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .animate-fade-in-up {
+      animation: fadeInUp 0.6s ease-out;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- ===== NAVEGACIÓN ===== -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#" class="nav-logo">
+        <img src="assets/logo.PNG" alt="Vaplux Logo">
+        <span>Vaplux</span>
+      </a>
+      
+      <ul class="nav-menu">
+        <li class="nav-item"><a href="#inicio" class="nav-link">Inicio</a></li>
+        
+        <li class="nav-item">
+          <a href="#productos" class="nav-link has-dropdown">Productos</a>
+          <div class="dropdown-menu">
+            <a href="secciones/productos/iPhones.html" class="dropdown-link">📱 iPhones</a>
+            <a href="secciones/productos/vapes.html" class="dropdown-link">💨 Vapes Premium</a>
+            <a href="secciones/productos/varios.html" class="dropdown-link">🔧 Tecnología</a>
+            <div class="dropdown-divider"></div>
+            <a href="#productos" class="dropdown-link">🛍️ Ver Todo</a>
+          </div>
+        </li>
+        
+        <li class="nav-item">
+          <a href="#servicios" class="nav-link has-dropdown">Servicios</a>
+          <div class="dropdown-menu">
+            <a href="secciones/ReparacionIphones.html" class="dropdown-link">🔧 Reparación iPhones</a>
+            <a href="secciones/TrabajacNosotros.html" class="dropdown-link">💼 Trabaja con Nosotros</a>
+            <div class="dropdown-divider"></div>
+            <a href="#servicios" class="dropdown-link">🎯 Todos los Servicios</a>
+          </div>
+        </li>
+        
+        <li class="nav-item"><a href="#nosotros" class="nav-link">Nosotros</a></li>
+        <li class="nav-item"><a href="#contacto" class="nav-link nav-cta">Contacto</a></li>
+      </ul>
+      
+      <div class="nav-toggle" id="navToggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ===== HERO PRINCIPAL ===== -->
+  <section class="hero" id="inicio">
+    <div class="container">
+      <div class="hero-content" data-aos="fade-up">
+        <div class="hero-badge">
+            🔧 Tecnología de Calidad y Servicio Confiable
+        </div>
+        <h1 class="hero-title">
+          Tecnología de Vanguardia
+          <br><span style="background: var(--gradient-accent); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;">para Todos</span>
+        </h1>
+        <p class="hero-subtitle">
+          Descubre nuestra selección premium de iPhones, dispositivos electrónicos de última generación y servicios técnicos especializados. Calidad garantizada y atención profesional.
+        </p>
+        <div class="hero-actions">
+          <a href="#productos" class="btn btn-primary">
+            🛍️ Ver Productos
+          </a>
+          <a href="#servicios" class="btn btn-outline">
+            🔧 Nuestros Servicios
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PRODUCTOS DESTACADOS ===== -->
+  <section class="section" id="productos">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <div class="section-badge">
+          ⭐ Productos Destacados
+        </div>
+        <h2 class="section-title">Tecnología Premium</h2>
+        <p class="section-subtitle">
+          Explora nuestra selección curada de productos tecnológicos de alta gama, desde iPhones hasta dispositivos innovadores.
+        </p>
+      </div>
+
+      <div class="products-grid">
+        <!-- iPhone 16 Pro -->
+        <div class="product-card" data-aos="fade-up" data-aos-delay="100">
+          <div class="product-image">
+            <img src="assets/iphone16-pn.jpg" alt="iPhone 16 Pro">
+            <div class="product-badge">Nuevo</div>
+          </div>
+          <div class="product-content">
+            <div class="product-category">📱 Smartphones</div>
+            <h3 class="product-title">iPhone 16 Pro</h3>
+            <p class="product-description">
+              El iPhone más avanzado con chip A18 Pro, sistema de cámaras profesional y diseño en titanio.
+            </p>
+            <div class="product-price">
+              <span class="price-current">$1.400.000</span>
+              <span class="price-original">$1.550.000</span>
+            </div>
+            <a href="secciones/productos/iPhones.html" class="btn btn-primary">
+              Ver Detalles
+            </a>
+          </div>
+        </div>
+
+        <!-- iPhone 15 Pink -->
+        <div class="product-card" data-aos="fade-up" data-aos-delay="150">
+          <div class="product-image">
+            <img src="assets/iphone15-pn.jpg" alt="iPhone 15 Pink">
+            <div class="product-badge">Popular</div>
+          </div>
+          <div class="product-content">
+            <div class="product-category">� Smartphones</div>
+            <h3 class="product-title">iPhone 15 Pink</h3>
+            <p class="product-description">
+              iPhone 15 en elegante color rosa con chip A16 Bionic y cámara de 48MP.
+            </p>
+            <div class="product-price">
+              <span class="price-current">$1.200.000</span>
+              <span class="price-original">$1.350.000</span>
+            </div>
+            <a href="secciones/productos/iPhones.html" class="btn btn-primary">
+              Ver Detalles
+            </a>
+          </div>
+        </div>
+
+        <!-- AirPods Pro 2 -->
+        <div class="product-card" data-aos="fade-up" data-aos-delay="200">
+          <div class="product-image">
+            <img src="assets/Air Pods pro 2.jpg" alt="AirPods Pro 2">
+            <div class="product-badge">Premium</div>
+          </div>
+          <div class="product-content">
+            <div class="product-category">🎧 Audio</div>
+            <h3 class="product-title">AirPods Pro 2</h3>
+            <p class="product-description">
+              Cancelación activa de ruido mejorada, chip H2 y hasta 6 horas de reproducción.
+            </p>
+            <div class="product-price">
+              <span class="price-current">$280.000</span>
+              <span class="price-original">$320.000</span>
+            </div>
+            <a href="secciones/productos/varios.html" class="btn btn-primary">
+              Ver Detalles
+            </a>
+          </div>
+        </div>
+
+        <!-- Vapes Lost Mary -->
+        <div class="product-card" data-aos="fade-up" data-aos-delay="250">
+          <div class="product-image">
+            <img src="assets/IMG_8850.jpg" alt="Vapes Lost Mary">
+            <div class="product-badge">Hot</div>
+          </div>
+          <div class="product-content">
+            <div class="product-category">💨 Vapes</div>
+            <h3 class="product-title">Lost Mary BM600</h3>
+            <p class="product-description">
+              Vape desechable premium, 600 puffs, sabores únicos importados.
+            </p>
+            <div class="product-price">
+              <span class="price-current">$8.500</span>
+              <span class="price-original">$10.000</span>
+            </div>
+            <a href="secciones/productos/vapes.html" class="btn btn-primary">
+              Ver Catálogo
+            </a>
+          </div>
+        </div>
+
+        <!-- Cargador MagSafe -->
+        <div class="product-card" data-aos="fade-up" data-aos-delay="300">
+          <div class="product-image">
+            <img src="assets/Cargador Mag Safe.jpg" alt="Cargador MagSafe">
+            <div class="product-badge">Original</div>
+          </div>
+          <div class="product-content">
+            <div class="product-category">🔌 Accesorios</div>
+            <h3 class="product-title">Cargador MagSafe</h3>
+            <p class="product-description">
+              Carga inalámbrica rápida de 15W para iPhone con tecnología MagSafe original.
+            </p>
+            <div class="product-price">
+              <span class="price-current">$45.000</span>
+              <span class="price-original">$55.000</span>
+            </div>
+            <a href="secciones/productos/varios.html" class="btn btn-primary">
+              Ver Detalles
+            </a>
+          </div>
+        </div>
+
+        <!-- PlayStation 5 -->
+        <div class="product-card" data-aos="fade-up" data-aos-delay="350">
+          <div class="product-image">
+            <img src="assets/PS5.jpg" alt="PlayStation 5">
+            <div class="product-badge">Gaming</div>
+          </div>
+          <div class="product-content">
+            <div class="product-category">🎮 Gaming</div>
+            <h3 class="product-title">PlayStation 5</h3>
+            <p class="product-description">
+              Consola de nueva generación con gráficos 4K, SSD ultrarrápido y DualSense.
+            </p>
+            <div class="product-price">
+              <span class="price-current">$850.000</span>
+              <span class="price-original">$950.000</span>
+            </div>
+            <a href="secciones/productos/varios.html" class="btn btn-primary">
+              Ver Detalles
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SERVICIOS PROFESIONALES ===== -->
+  <section class="section" id="servicios" style="background: var(--gray-100);">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <div class="section-badge">
+          🛠️ Servicios Especializados
+        </div>
+        <h2 class="section-title">Soporte Técnico Profesional</h2>
+        <p class="section-subtitle">
+          Servicios técnicos certificados con garantía extendida. Reparaciones especializadas y atención personalizada.
+        </p>
+      </div>
+
+      <div class="services-grid">
+        <!-- Reparación iPhones -->
+        <div class="service-card" data-aos="fade-up" data-aos-delay="100">
+          <div class="service-icon">
+            🔧
+          </div>
+          <h3 class="service-title">Reparación de iPhones</h3>
+          <p class="service-description">
+            Técnicos especializados en dispositivos Apple. Repuestos originales, diagnóstico gratuito y garantía extendida.
+          </p>
+          <a href="secciones/ReparacionIphones.html" class="service-link">
+            Ver Más <i class="fas fa-arrow-right"></i>
+          </a>
+        </div>
+
+        <!-- Asesoramiento -->
+        <div class="service-card" data-aos="fade-up" data-aos-delay="200">
+          <div class="service-icon">
+            💬
+          </div>
+          <h3 class="service-title">Asesoramiento Personalizado</h3>
+          <p class="service-description">
+            Consultoría técnica especializada. Te ayudamos a elegir el dispositivo perfecto según tus necesidades.
+          </p>
+          <a href="#contacto" class="service-link">
+            Consultar <i class="fas fa-arrow-right"></i>
+          </a>
+        </div>
+
+        <!-- Garantía -->
+        <div class="service-card" data-aos="fade-up" data-aos-delay="300">
+          <div class="service-icon">
+            🛡️
+          </div>
+          <h3 class="service-title">Garantía Extendida</h3>
+          <p class="service-description">
+            Todos nuestros productos incluyen garantía extendida. Protección completa y soporte post-venta.
+          </p>
+          <a href="#contacto" class="service-link">
+            Información <i class="fas fa-arrow-right"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== NOSOTROS ===== -->
+  <section class="section" id="nosotros">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <div class="section-badge">
+          🏢 Sobre Nosotros
+        </div>
+        <h2 class="section-title">Experiencia y Confianza</h2>
+        <p class="section-subtitle">
+          Con años de experiencia en el sector tecnológico, nos especializamos en brindar productos premium y servicios técnicos de excelencia.
+        </p>
+      </div>
+
+      <div class="services-grid">
+        <!-- Experiencia -->
+        <div class="service-card" data-aos="fade-up" data-aos-delay="100">
+          <div class="service-icon">
+            🎯
+          </div>
+          <h3 class="service-title">Expertise Técnico</h3>
+          <p class="service-description">
+            Equipo altamente capacitado con certificaciones en reparación de dispositivos Apple y tecnología moderna.
+          </p>
+        </div>
+
+        <!-- Calidad -->
+        <div class="service-card" data-aos="fade-up" data-aos-delay="200">
+          <div class="service-icon">
+            💎
+          </div>
+          <h3 class="service-title">Productos Premium</h3>
+          <p class="service-description">
+            Selección cuidadosa de productos de alta gama. Solo trabajamos con marcas reconocidas y proveedores confiables.
+          </p>
+        </div>
+
+        <!-- Atención -->
+        <div class="service-card" data-aos="fade-up" data-aos-delay="300">
+          <div class="service-icon">
+            🤝
+          </div>
+          <h3 class="service-title">Atención Personalizada</h3>
+          <p class="service-description">
+            Cada cliente es único. Ofrecemos asesoramiento personalizado para encontrar la solución perfecta.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CONTACTO ===== -->
+  <section class="section contact-section" id="contacto">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <h2 class="section-title">Estamos Aquí para Ayudarte</h2>
+        <p class="section-subtitle">
+          Visita nuestro local físico o contáctanos para consultas, presupuestos y asesoramiento especializado.
+        </p>
+      </div>
+
+      <div class="contact-grid">
+        <!-- Ubicación -->
+        <div class="contact-card" data-aos="fade-up" data-aos-delay="100">
+          <div class="contact-icon">
+            📍
+          </div>
+          <h3 class="contact-title">Nuestro Local</h3>
+          <div class="contact-info">
+            <strong>Calle 18 esquina 50</strong><br>
+            La Plata, Buenos Aires<br>
+            Argentina (1900)<br>
+            <a href="https://www.google.com/maps/search/?api=1&query=Calle+18+esquina+50+La+Plata+Buenos+Aires" 
+               class="contact-link" 
+               target="_blank"
+               rel="noopener noreferrer">
+              <i class="fas fa-map-marker-alt"></i> Ver en Google Maps
+            </a>
+          </div>
+        </div>
+
+        <!-- Teléfono -->
+        <div class="contact-card" data-aos="fade-up" data-aos-delay="200">
+          <div class="contact-icon">
+            📱
+          </div>
+          <h3 class="contact-title">WhatsApp</h3>
+          <div class="contact-info">
+            <a href="https://wa.me/5492216703630" class="contact-link" target="_blank">
+              +54 9 221 670-3630
+            </a><br>
+            Consultas y presupuestos
+          </div>
+        </div>
+
+        <!-- Horarios -->
+        <div class="contact-card" data-aos="fade-up" data-aos-delay="300">
+          <div class="contact-icon">
+            🕐
+          </div>
+          <h3 class="contact-title">Horarios</h3>
+          <div class="contact-info">
+            Lun - Vie: 9:00 - 18:00<br>
+            Sáb: 10:00 - 14:00<br>
+            Dom: Cerrado
+          </div>
+        </div>
+
+        <!-- Trabajo -->
+        <div class="contact-card" data-aos="fade-up" data-aos-delay="400">
+          <div class="contact-icon">
+            💼
+          </div>
+          <h3 class="contact-title">Únete al Equipo</h3>
+          <div class="contact-info">
+            ¿Buscas trabajo?<br>
+            <a href="secciones/TrabajacNosotros.html" class="contact-link">
+              Trabajá con nosotros
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mapa de ubicación -->
+      <div class="location-map" data-aos="fade-up" data-aos-delay="500">
+        <div class="map-container">
+          <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3271.5!2d-57.9536!3d-34.9204!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzTCsDU1JzEzLjQiUyA1N8KwNTcnMTMuMCJX!5e0!3m2!1ses!2sar!4v1234567890"
+            width="100%" 
+            height="400" 
+            style="border:0; border-radius: 16px;" 
+            allowfullscreen="" 
+            loading="lazy" 
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
+        <div class="map-info">
+          <div class="map-info-icon">
+            <i class="fas fa-map-marked-alt"></i>
+          </div>
+          <div class="map-info-text">
+            <h4>¿Cómo llegar?</h4>
+            <p>Estamos ubicados en pleno centro de La Plata, cerca de todos los transportes públicos. 
+            Haz clic en "Ver en Google Maps" para obtener direcciones desde tu ubicación.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <!-- Empresa -->
+        <div class="footer-section">
+          <h4>Vaplux</h4>
+          <p style="color: rgba(255, 255, 255, 0.8); line-height: 1.6;">
+            Especialistas en tecnología premium. Productos de calidad, servicios profesionales y atención personalizada.
+          </p>
+          <div style="margin-top: var(--spacing-md);">
+            <a href="https://wa.me/5492216703630" target="_blank" style="color: var(--brand-accent); text-decoration: none;">
+              <i class="fab fa-whatsapp"></i> WhatsApp
+            </a>
+          </div>
+        </div>
+
+        <!-- Productos -->
+        <div class="footer-section">
+          <h4>Productos</h4>
+          <ul class="footer-links">
+            <li><a href="secciones/productos/iPhones.html">📱 iPhones</a></li>
+            <li><a href="secciones/productos/vapes.html">💨 Vapes</a></li>
+            <li><a href="secciones/productos/varios.html">🎁 Accesorios</a></li>
+          </ul>
+        </div>
+
+        <!-- Servicios -->
+        <div class="footer-section">
+          <h4>Servicios</h4>
+          <ul class="footer-links">
+            <li><a href="secciones/ReparacionIphones.html">🔧 Reparaciones</a></li>
+            <li><a href="#servicios">💬 Asesoramiento</a></li>
+            <li><a href="#contacto">🛡️ Garantías</a></li>
+          </ul>
+        </div>
+
+        <!-- Empresa -->
+        <div class="footer-section">
+          <h4>Empresa</h4>
+          <ul class="footer-links">
+            <li><a href="#nosotros">🏢 Sobre Nosotros</a></li>
+            <li><a href="secciones/TrabajacNosotros.html">💼 Trabaja con Nosotros</a></li>
+            <li><a href="#contacto">📍 Contacto</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2024 Vaplux. Todos los derechos reservados. | Tecnología Premium en La Plata</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===== SCRIPTS ===== -->
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    // Inicializar AOS
+    AOS.init({
+      duration: 800,
+      easing: 'ease-out-cubic',
+      once: true,
+      offset: 100
+    });
+
+    // Navbar scroll effect
+    window.addEventListener('scroll', function() {
+      const navbar = document.getElementById('navbar');
+      if (window.scrollY > 100) {
+        navbar.classList.add('scrolled');
+      } else {
+        navbar.classList.remove('scrolled');
+      }
+    });
+
+    // Mobile menu toggle
+    const navToggle = document.getElementById('navToggle');
+    const navMenu = document.querySelector('.nav-menu');
+
+    navToggle.addEventListener('click', function() {
+      navMenu.classList.toggle('active');
+      
+      // Animación del botón hamburguesa
+      const spans = navToggle.querySelectorAll('span');
+      if (navMenu.classList.contains('active')) {
+        spans[0].style.transform = 'rotate(45deg) translate(5px, 5px)';
+        spans[1].style.opacity = '0';
+        spans[2].style.transform = 'rotate(-45deg) translate(7px, -6px)';
+      } else {
+        spans[0].style.transform = 'none';
+        spans[1].style.opacity = '1';
+        spans[2].style.transform = 'none';
+      }
+    });
+
+    // Cerrar menú móvil al hacer clic en un enlace
+    document.querySelectorAll('.nav-link').forEach(link => {
+      link.addEventListener('click', function() {
+        navMenu.classList.remove('active');
+        // Reset hamburger animation
+        const spans = navToggle.querySelectorAll('span');
+        spans[0].style.transform = 'none';
+        spans[1].style.opacity = '1';
+        spans[2].style.transform = 'none';
+      });
+    });
+
+    // Smooth scrolling para enlaces internos
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          const offsetTop = target.offsetTop - 80;
+          window.scrollTo({
+            top: offsetTop,
+            behavior: 'smooth'
+          });
+        }
+      });
+    });
+
+    // Añadir efectos de entrada cuando los elementos son visibles
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -100px 0px'
+    };
+
+    const observer = new IntersectionObserver(function(entries) {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('animate-fade-in-up');
+        }
+      });
+    }, observerOptions);
+
+    // Observar elementos para animaciones
+    document.querySelectorAll('.product-card, .service-card, .contact-card').forEach(el => {
+      observer.observe(el);
+    });
+  </script>
+</body>
+</html>

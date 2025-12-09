@@ -1,0 +1,25 @@
+# Scripts de PowerShell temporales
+*.ps1
+
+# Archivos de respaldo
+*_backup.html
+*_new.html
+
+# Archivos de prueba
+demo-*.html
+test-*.html
+simple-script.html
+verificacion-*.html
+trabajando.html
+corrector.html
+
+# Carpeta de fotos de WhatsApp
+Fotos-wsp/
+
+# Archivos del sistema
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Logs
+*.log
