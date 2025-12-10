@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8">
@@ -11,6 +11,7 @@
   <!-- External Libraries -->
   <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  <!-- Cart System -->`n  <link rel="stylesheet" href="../../../design-system/cart-system.css">`n
   
   <!-- Navbar compartido -->
   <link rel="stylesheet" href="../../../design-system/shared-navbar.css">
@@ -823,12 +824,16 @@
         </div>
 
         <div class="product-actions">
+          <button class="btn btn-primary" onclick="VapluxCart.addToCart({id: 'vape-elfbar-bc5000', name: 'ElfBar BC5000', price: 23500, image: '../../../Fotos-wsp/ELFBAR.png'})" style="margin-right: 0.5rem;">
+            <i class="fas fa-shopping-cart"></i>
+            Agregar al Carrito
+          </button>
           <a href="https://wa.me/5492216703630?text=Hola! Me interesa el ElfBar BC5000 - $23.500" 
-             target="_blank" class="btn btn-primary">
+             target="_blank" class="btn btn-secondary">
             <i class="fab fa-whatsapp"></i>
-            Comprar por WhatsApp
+            WhatsApp
           </a>
-          <button class="btn btn-secondary" onclick="toggleFavorite(this)">
+          <button class="btn btn-secondary" onclick="toggleFavorite(this)" style="margin-left: 0.5rem;">
             <i class="far fa-heart"></i>
           </button>
         </div>
@@ -975,5 +980,55 @@
       });
     }
   </script>
+
+  <!-- Cart System -->
+  <!-- Floating Cart Button -->
+  <button class="cart-float-btn" id="cart-float-btn" onclick="VapluxCart.toggleCart()">
+    <i class="fas fa-shopping-cart"></i>
+    <span class="cart-float-badge" id="cart-float-badge" style="display: none;">0</span>
+  </button>
+
+  <!-- Cart Overlay -->
+  <div class="cart-overlay" id="cart-overlay" onclick="VapluxCart.closeCart()"></div>
+
+  <!-- Cart Sidebar -->
+  <div class="cart-sidebar" id="cart-sidebar">
+    <div class="cart-header">
+      <h3>Tu Carrito</h3>
+      <button class="cart-close" id="cart-close" onclick="VapluxCart.closeCart()">
+        <i class="fas fa-times"></i>
+      </button>
+    </div>
+    
+    <div class="cart-empty" id="cart-empty">
+      <i class="fas fa-shopping-cart"></i>
+      <p>Tu carrito estÃ¡ vacÃ­o</p>
+      <span>Â¡AgregÃ¡ productos para comenzar!</span>
+    </div>
+    
+    <div class="cart-items" id="cart-items">
+      <!-- Los items se cargarÃ¡n dinÃ¡micamente aquÃ­ -->
+    </div>
+    
+    <div class="cart-footer" id="cart-footer" style="display: none;">
+      <div class="cart-totals">
+        <div class="cart-subtotal">
+          <span>Subtotal:</span>
+          <span id="cart-subtotal"></body></span>
+        </div>
+        <div class="cart-total">
+          <span>Total:</span>
+          <span id="cart-total"></body></span>
+        </div>
+      </div>
+      <button class="cart-checkout-btn" id="cart-checkout-btn" onclick="VapluxCart.checkout()">
+        <i class="fab fa-whatsapp"></i>
+        Finalizar Compra por WhatsApp
+      </button>
+    </div>
+  </div>
+
+  <!-- Cart System JS -->
+  <script src="../../../design-system/cart-system.js"></script>
 </body>
 </html>
