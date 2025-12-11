@@ -886,6 +886,8 @@
             transition: all 0.4s ease;
             position: relative;
             overflow: hidden;
+            display: flex;
+            flex-direction: column;
         }
         
         .product-card::before {
@@ -953,15 +955,6 @@
             font-weight: 500;
         }
         
-        .product-footer {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-top: 1.5rem;
-            padding-top: 1.5rem;
-            border-top: 1px solid var(--border-primary);
-        }
-        
         .product-price {
             font-size: 1.8rem;
             font-weight: 800;
@@ -1020,6 +1013,9 @@
         /* ===== ADDITIONAL PRODUCT STYLES ===== */
         .product-info {
             padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            flex: 1;
         }
 
         .product-info h3 {
@@ -1889,6 +1885,12 @@
             </div>
         </div>
     </footer>
+
+    <!-- Floating Cart Button -->
+    <button class="cart-float-btn" id="cart-float-btn" aria-label="Abrir carrito de compras">
+      <i class="fas fa-shopping-cart"></i>
+      <span class="cart-float-badge" id="cart-float-badge" style="display: none;">0</span>
+    </button>
 
     <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
