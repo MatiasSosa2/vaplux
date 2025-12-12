@@ -163,7 +163,7 @@
           </div>
         </div>
         <div class="cta-buttons">
-          <button class="btn btn-primary" onclick="addToCart()"><i class="fas fa-shopping-cart"></i> Agregar al Carrito</button>
+          <button class="btn btn-primary" onclick="VapluxCart.addToCart({ id: 'proyector-magis-tv', name: 'Proyector Magis TV', price: 75000, image: document.querySelector('.main-image, .product-image, img')?.src || 'assets/logo.PNG' })"><i class="fas fa-shopping-cart"></i> Agregar al Carrito</button>
           <a href="https://wa.me/5491133945367?text=Hola!%20Me%20interesa%20el%20producto:%20Proyector%20Magis%20TV" class="btn btn-secondary" target="_blank"><i class="fab fa-whatsapp"></i> Consultar por WhatsApp</a>
         </div>
       </div>
@@ -182,8 +182,7 @@
 
   <script src="../../../design-system/navigation.js"></script>
   <script>
-    function addToCart() {
-      const product = { id: 'varios-12', name: 'Proyector Magis TV', price: 98825, priceUSD: 67, image: 'https://images.unsplash.com/photo-1560169897-fc0cdbdfa4d5?w=400' };
+    ;
       let cart = JSON.parse(localStorage.getItem('vaplux-cart')) || [];
       const existingItem = cart.find(item => item.id === product.id);
       if (existingItem) { existingItem.quantity += 1; } else { cart.push({...product, quantity: 1}); }

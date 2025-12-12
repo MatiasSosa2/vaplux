@@ -182,7 +182,7 @@
           </div>
         </div>
         <div class="cta-buttons">
-          <button class="btn btn-primary" onclick="addToCart()"><i class="fas fa-shopping-cart"></i> Agregar al Carrito</button>
+          <button class="btn btn-primary" onclick="VapluxCart.addToCart({ id: 'game-stick-5000', name: 'Game Stick 5.000 Juegos', price: 25000, image: document.querySelector('.main-image, .product-image, img')?.src || 'assets/logo.PNG' })"><i class="fas fa-shopping-cart"></i> Agregar al Carrito</button>
           <a href="https://wa.me/5491133945367?text=Hola!%20Me%20interesa%20el%20producto:%20Game%20Stick%205.000%20Juegos" class="btn btn-secondary" target="_blank"><i class="fab fa-whatsapp"></i> Consultar por WhatsApp</a>
         </div>
       </div>
@@ -201,8 +201,7 @@
 
   <script src="../../../design-system/navigation.js"></script>
   <script>
-    function addToCart() {
-      const product = { id: 'varios-8', name: 'Game Stick 5.000 Juegos', price: 17700, priceUSD: 12, image: 'https://images.unsplash.com/photo-1612036782180-6f0b6cd846fe?w=400' };
+    ;
       let cart = JSON.parse(localStorage.getItem('vaplux-cart')) || [];
       const existingItem = cart.find(item => item.id === product.id);
       if (existingItem) { existingItem.quantity += 1; } else { cart.push({...product, quantity: 1}); }

@@ -403,7 +403,7 @@
         </div>
 
         <div class="cta-buttons">
-          <button class="btn btn-primary" onclick="addToCart()">
+          <button class="btn btn-primary" onclick="VapluxCart.addToCart({ id: 'jbl-go-3-4', name: 'JBL GO 3 & 4', price: 25075, image: document.querySelector('.main-image, .product-image, img')?.src || 'assets/logo.PNG' })">
             <i class="fas fa-shopping-cart"></i>
             Agregar al Carrito
           </button>
@@ -458,14 +458,7 @@
 
   <script src="../../../design-system/navigation.js"></script>
   <script>
-    function addToCart() {
-      const product = {
-        id: 'varios-3',
-        name: 'JBL GO 3 & 4',
-        price: 25075,
-        priceUSD: 17,
-        image: 'https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?w=400'
-      };
+    ;
 
       let cart = JSON.parse(localStorage.getItem('vaplux-cart')) || [];
       const existingItem = cart.find(item => item.id === product.id);
