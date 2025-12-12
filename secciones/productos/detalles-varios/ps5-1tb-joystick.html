@@ -163,7 +163,7 @@
           </div>
         </div>
         <div class="cta-buttons">
-          <button class="btn btn-primary" onclick="addToCart()"><i class="fas fa-shopping-cart"></i> Agregar al Carrito</button>
+          <button class="btn btn-primary" onclick="VapluxCart.addToCart({ id: 'ps5-1tb-joystick', name: 'PS5 1TB + Joystick', price: 950000, image: document.querySelector('.main-image, .product-image, img')?.src || 'assets/logo.PNG' })"><i class="fas fa-shopping-cart"></i> Agregar al Carrito</button>
           <a href="https://wa.me/5491133945367?text=Hola!%20Me%20interesa%20el%20producto:%20PS5%201TB%20%2B%20Joystick" class="btn btn-secondary" target="_blank"><i class="fab fa-whatsapp"></i> Consultar por WhatsApp</a>
         </div>
       </div>
@@ -182,8 +182,7 @@
 
   <script src="../../../design-system/navigation.js"></script>
   <script>
-    function addToCart() {
-      const product = { id: 'varios-7', name: 'PS5 1TB + Joystick', price: 840750, priceUSD: 570, image: 'https://images.unsplash.com/photo-1606813907291-d86efa9b94db?w=400' };
+    ;
       let cart = JSON.parse(localStorage.getItem('vaplux-cart')) || [];
       const existingItem = cart.find(item => item.id === product.id);
       if (existingItem) { existingItem.quantity += 1; } else { cart.push({...product, quantity: 1}); }

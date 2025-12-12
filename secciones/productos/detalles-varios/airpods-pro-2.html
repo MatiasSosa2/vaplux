@@ -548,7 +548,7 @@
         </div>
 
         <div class="cta-buttons">
-          <button class="btn btn-primary" onclick="addToCart()">
+          <button class="btn btn-primary" onclick="VapluxCart.addToCart({ id: 'airpods-pro-2', name: 'AirPods Pro 2', price: 450000, image: document.querySelector('.main-image, .product-image, img')?.src || 'assets/logo.PNG' })">
             <i class="fas fa-shopping-cart"></i>
             Agregar al Carrito
           </button>
@@ -604,14 +604,7 @@
 
   <script src="../../../design-system/navigation.js"></script>
   <script>
-    function addToCart() {
-      const product = {
-        id: 'varios-1',
-        name: 'AirPods Pro 2',
-        price: 22125,
-        priceUSD: 15,
-        image: 'https://images.unsplash.com/photo-1606220945770-b5b6c2c55bf1?w=400'
-      };
+    ;
 
       let cart = JSON.parse(localStorage.getItem('vaplux-cart')) || [];
       const existingItem = cart.find(item => item.id === product.id);
