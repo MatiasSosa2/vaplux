@@ -263,6 +263,11 @@ document.addEventListener('DOMContentLoaded', () => {
     cartIcon.addEventListener('click', () => VapluxCart.toggleCart());
   }
   
+  const cartFloatBtn = document.getElementById('cart-float-btn');
+  if (cartFloatBtn) {
+    cartFloatBtn.addEventListener('click', () => VapluxCart.toggleCart());
+  }
+  
   const cartClose = document.getElementById('cart-close');
   if (cartClose) {
     cartClose.addEventListener('click', () => VapluxCart.closeCart());
