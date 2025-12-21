@@ -25,9 +25,9 @@ desktop.ini
 *.log
 
 # Node/Next en vaplux-next
-vaplux-next/node_modules/
-vaplux-next/.next/
-vaplux-next/out/
+node_modules/
+.next/
+out/
 
 # Entornos y cachés
 .env
