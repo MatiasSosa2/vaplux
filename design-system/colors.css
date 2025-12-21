@@ -172,3 +172,30 @@
   backdrop-filter: blur(20px);
   border: 1px solid rgba(255, 255, 255, 0.2);
 }
+
+/* ===== Apple-inspired tokens and motions ===== */
+:root {
+  --navy: #003366;
+  --cyan-premium: #00AEEF;
+  --graylight: #F7F7F7;
+
+  --blueGlow-shadow: 0 8px 24px rgba(0, 174, 239, 0.18);
+  --ring-gradient: radial-gradient(120% 120% at 50% 50%, rgba(0, 174, 239, 0.25) 0%, rgba(0, 174, 239, 0) 60%);
+  --ring-gradient-strong: radial-gradient(120% 120% at 50% 50%, rgba(0, 102, 255, 0.3) 0%, rgba(0, 102, 255, 0) 60%);
+
+  --motion-fast: 150ms;
+  --motion-normal: 300ms;
+  --motion-slow: 500ms;
+}
+
+.focus-accessible:focus {
+  outline: 3px solid rgba(0, 174, 239, 0.35);
+  outline-offset: 2px;
+  box-shadow: 0 0 0 4px rgba(0, 102, 255, 0.12);
+}
+
+@keyframes overlayMove {
+  0% { transform: translate3d(0,0,0); opacity: 0.12; }
+  50% { transform: translate3d(2%, -2%, 0); opacity: 0.18; }
+  100% { transform: translate3d(0,0,0); opacity: 0.12; }
+}

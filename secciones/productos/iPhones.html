@@ -110,22 +110,21 @@
         }
 
         /* ===== NAVEGACIÓN PROFESIONAL ===== */
-        .navbar {
-          position: fixed;
-          top: 0;
-          left: 0;
-          right: 0;
-          background: rgba(255, 255, 255, 0.95);
-          backdrop-filter: blur(20px);
-          border-bottom: 1px solid var(--gray-200);
-          z-index: 1000;
-          transition: var(--transition-normal);
-        }
+                .navbar {
+                    position: fixed;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    background: linear-gradient(180deg, #0A2540 0%, #0F3A5F 100%);
+                    border-bottom: 1px solid rgba(255,255,255,0.12);
+                    z-index: 1000;
+                    transition: var(--transition-normal);
+                }
 
-        .navbar.scrolled {
-          background: rgba(255, 255, 255, 0.98);
-          box-shadow: var(--shadow-md);
-        }
+                .navbar.scrolled {
+                    background: linear-gradient(180deg, #0A2540 0%, #0F3A5F 100%);
+                    box-shadow: 0 8px 20px rgba(10, 37, 64, 0.25);
+                }
 
         .nav-container {
           display: flex;
@@ -718,12 +717,12 @@
 
         .product-title-link {
             text-decoration: none;
-            color: inherit;
+            color: var(--brand-primary);
             transition: color 0.3s ease;
         }
 
         .product-title-link:hover {
-            color: var(--brand-primary);
+            color: var(--brand-secondary);
         }
 
         .product-link:hover .product-image {
@@ -967,8 +966,8 @@
         }
         
         .add-to-cart-btn {
-            background: linear-gradient(135deg, var(--accent-blue), var(--accent-cyan));
-            color: var(--surface-primary);
+            background: var(--brand-primary);
+            color: white;
             border: none;
             padding: 0.8rem 1.5rem;
             border-radius: 10px;
@@ -978,11 +977,36 @@
             display: flex;
             align-items: center;
             gap: 0.5rem;
+            font-size: 0.95rem;
         }
         
         .add-to-cart-btn:hover {
+            background: var(--brand-secondary);
             transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(59, 130, 246, 0.3);
+            box-shadow: 0 8px 25px rgba(0, 102, 204, 0.3);
+        }
+        
+        .view-more-btn {
+            background: transparent;
+            color: var(--brand-primary);
+            border: 2px solid var(--brand-primary);
+            padding: 0.8rem 1.5rem;
+            border-radius: 10px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            text-decoration: none;
+            font-size: 0.95rem;
+        }
+        
+        .view-more-btn:hover {
+            background: var(--brand-primary);
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0, 44, 95, 0.3);
         }
         
         /* Category Badges */
@@ -1059,11 +1083,30 @@
 
         .product-footer {
             display: flex;
-            justify-content: space-between;
-            align-items: center;
+            flex-direction: column;
+            gap: 1rem;
             padding-top: 1rem;
             border-top: 1px solid var(--border-primary);
             margin-top: auto;
+        }
+        
+        .product-price-row {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .product-actions {
+            display: flex;
+            gap: 0.75rem;
+            flex-wrap: wrap;
+        }
+        
+        .product-actions .add-to-cart-btn,
+        .product-actions .view-more-btn {
+            flex: 1;
+            min-width: 140px;
+            justify-content: center;
         }
 
         .add-to-cart-btn i {
@@ -1464,7 +1507,7 @@
         <span>Vaplux</span>
       </a>
       
-      <ul class="nav-menu">
+            <ul class="nav-menu">
         <li class="nav-item"><a href="../../index.html#inicio" class="nav-link">Inicio</a></li>
         
         <li class="nav-item">
@@ -1491,6 +1534,15 @@
         <li class="nav-item"><a href="../../index.html#nosotros" class="nav-link">Nosotros</a></li>
         <li class="nav-item"><a href="../../index.html#contacto" class="nav-link nav-cta">Contacto</a></li>
       </ul>
+
+            <!-- Carrito en navbar (derecha) -->
+            <div>
+                <button id="cart-icon" class="nav-link" style="background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.2); border-radius: 999px;">
+                    <span aria-hidden="true">🛒</span>
+                    <span id="cart-badge" class="cart-float-badge" style="display: none; position: relative; top: auto; right: auto; margin-left: 6px; border-color: rgba(255,255,255,0.4);">0</span>
+                    <span class="sr-only">Abrir carrito</span>
+                </button>
+            </div>
       
       <div class="nav-toggle" id="navToggle">
         <span></span>
@@ -1598,7 +1650,9 @@
                 <div class="product-card" data-category="Nuevos" data-price="950000" data-aos="fade-up" data-aos-delay="100">
                     <div class="category-badge nuevos">Nuevo</div>
                     <a href="detalles/iphone13-midnight.html" class="product-link">
-                        <img src="../../assets/iPhone13/iPhone13.webp" alt="iPhone 13 Midnight" class="product-image">
+                        <div class="image-safe-zone img-zoom">
+                            <img src="https://http2.mlstatic.com/D_NQ_NP_2X_787642-MLA95698363690_102025-F.webp" alt="iPhone 13 Midnight" class="product-image">
+                        </div>
                     </a>
                     <div class="product-info">
                         <h3><a href="detalles/iphone13-midnight.html" class="product-title-link">iPhone 13</a></h3>
@@ -1610,13 +1664,22 @@
                             <span class="spec-tag">Face ID</span>
                         </div>
                         <div class="product-footer">
-                            <div class="product-price">
-                                <span class="price-currency">$</span>950.000
+                            <div class="product-price-row">
+                                <div class="product-price">
+                                    <span class="price-currency">$</span>950.000
+                            
+                                </div>
                             </div>
-                            <button class="add-to-cart-btn" onclick="addToCart('iPhone 13 Midnight', 950000)">
-                                <i class="fas fa-shopping-cart"></i>
-                                Agregar
-                            </button>
+                            <div class="product-actions">
+                                <button class="add-to-cart-btn" onclick="addToCart('iPhone 13 Midnight', 950000)">
+                                    <i class="fas fa-shopping-cart"></i>
+                                    Agregar
+                                </button>
+                                <a href="detalles/iphone13-midnight.html" class="view-more-btn">
+                                    <i class="fas fa-eye"></i>
+                                    Ver más
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -1625,7 +1688,9 @@
                 <div class="product-card" data-category="Nuevos" data-price="1100000" data-aos="fade-up" data-aos-delay="200">
                     <div class="category-badge nuevos">Nuevo</div>
                     <a href="detalles/iphone14.html" class="product-link">
-                        <img src="../../assets/iPhone14/iphone14-1.webp" alt="iPhone 14" class="product-image">
+                        <div class="image-safe-zone img-zoom">
+                            <img src="../../assets/iPhone14/iphone14-1.webp" alt="iPhone 14" class="product-image">
+                        </div>
                     </a>
                     <div class="product-info">
                         <h3><a href="detalles/iphone14.html" class="product-title-link">iPhone 14</a></h3>
@@ -1637,13 +1702,22 @@
                             <span class="spec-tag">5G</span>
                         </div>
                         <div class="product-footer">
-                            <div class="product-price">
-                                <span class="price-currency">$</span>1.100.000
+                            <div class="product-price-row">
+                                <div class="product-price">
+                                    <span class="price-currency">$</span>1.100.000
+                            
+                                </div>
                             </div>
-                            <button class="add-to-cart-btn" onclick="addToCart('iPhone 14', 1100000)">
-                                <i class="fas fa-shopping-cart"></i>
-                                Agregar
-                            </button>
+                            <div class="product-actions">
+                                <button class="add-to-cart-btn" onclick="addToCart('iPhone 14', 1100000)">
+                                    <i class="fas fa-shopping-cart"></i>
+                                    Agregar
+                                </button>
+                                <a href="detalles/iphone14.html" class="view-more-btn">
+                                    <i class="fas fa-eye"></i>
+                                    Ver más
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -1664,13 +1738,22 @@
                             <span class="spec-tag">Dynamic Island</span>
                         </div>
                         <div class="product-footer">
-                            <div class="product-price">
-                                <span class="price-currency">$</span>1.250.000
+                            <div class="product-price-row">
+                                <div class="product-price">
+                                    <span class="price-currency">$</span>1.250.000
+                            
+                                </div>
                             </div>
-                            <button class="add-to-cart-btn" onclick="addToCart('iPhone 14 Pro', 1250000)">
-                                <i class="fas fa-shopping-cart"></i>
-                                Agregar
-                            </button>
+                            <div class="product-actions">
+                                <button class="add-to-cart-btn" onclick="addToCart('iPhone 14 Pro', 1250000)">
+                                    <i class="fas fa-shopping-cart"></i>
+                                    Agregar
+                                </button>
+                                <a href="detalles/iphone14pro.html" class="view-more-btn">
+                                    <i class="fas fa-eye"></i>
+                                    Ver más
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -1691,13 +1774,22 @@
                             <span class="spec-tag">Dynamic Island</span>
                         </div>
                         <div class="product-footer">
-                            <div class="product-price">
-                                <span class="price-currency">$</span>1.320.000
+                            <div class="product-price-row">
+                                <div class="product-price">
+                                    <span class="price-currency">$</span>1.320.000
+                            
+                                </div>
                             </div>
-                            <button class="add-to-cart-btn" onclick="addToCart('iPhone 14 Pro Max Space Black', 1320000)">
-                                <i class="fas fa-shopping-cart"></i>
-                                Agregar
-                            </button>
+                            <div class="product-actions">
+                                <button class="add-to-cart-btn" onclick="addToCart('iPhone 14 Pro Max Space Black', 1320000)">
+                                    <i class="fas fa-shopping-cart"></i>
+                                    Agregar
+                                </button>
+                                <a href="detalles/iphone14pm-space-black.html" class="view-more-btn">
+                                    <i class="fas fa-eye"></i>
+                                    Ver más
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -1718,13 +1810,22 @@
                             <span class="spec-tag">USB-C</span>
                         </div>
                         <div class="product-footer">
-                            <div class="product-price">
-                                <span class="price-currency">$</span>1.180.000
+                            <div class="product-price-row">
+                                <div class="product-price">
+                                    <span class="price-currency">$</span>1.180.000
+                            
+                                </div>
                             </div>
-                            <button class="add-to-cart-btn" onclick="addToCart('iPhone 15 Pro Natural Titanium', 1180000)">
-                                <i class="fas fa-shopping-cart"></i>
-                                Agregar
-                            </button>
+                            <div class="product-actions">
+                                <button class="add-to-cart-btn" onclick="addToCart('iPhone 15 Pro Natural Titanium', 1180000)">
+                                    <i class="fas fa-shopping-cart"></i>
+                                    Agregar
+                                </button>
+                                <a href="detalles/iphone15p-natural-titanium.html" class="view-more-btn">
+                                    <i class="fas fa-eye"></i>
+                                    Ver más
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -1745,13 +1846,22 @@
                             <span class="spec-tag">USB-C</span>
                         </div>
                         <div class="product-footer">
-                            <div class="product-price">
-                                <span class="price-currency">$</span>1.250.000
+                            <div class="product-price-row">
+                                <div class="product-price">
+                                    <span class="price-currency">$</span>1.250.000
+                            
+                                </div>
                             </div>
-                            <button class="add-to-cart-btn" onclick="addToCart('iPhone 16 Blue', 1250000)">
-                                <i class="fas fa-shopping-cart"></i>
-                                Agregar
-                            </button>
+                            <div class="product-actions">
+                                <button class="add-to-cart-btn" onclick="addToCart('iPhone 16 Blue', 1250000)">
+                                    <i class="fas fa-shopping-cart"></i>
+                                    Agregar
+                                </button>
+                                <a href="detalles/iphone16-blue.html" class="view-more-btn">
+                                    <i class="fas fa-eye"></i>
+                                    Ver más
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -1772,14 +1882,23 @@
                             <span class="spec-tag">Titanium</span>
                         </div>
                         <div class="product-footer">
-                            <div class="product-price">
-                                <span class="price-currency">$</span>1.400.000
+                            <div class="product-price-row">
+                                <div class="product-price">
+                                    <span class="price-currency">$</span>1.400.000
+                            
+                                </div>
                             </div>
-                            <button class="add-to-cart-btn" onclick="addToCart('iPhone 16 Pro', 1400000)">
+                            <div class="product-actions">
+                                <button class="add-to-cart-btn" onclick="addToCart('iPhone 16 Pro', 1400000)">
                                 <i class="fas fa-shopping-cart"></i>
                                 Agregar
                             </button>
-                        </div>
+                                <a href="detalles/iphone16p-titanium-black.html" class="view-more-btn">
+                                    <i class="fas fa-eye"></i>
+                                    Ver más
+                                </a>
+                            </div>
+                        </div></div>
                     </div>
                 </div>
 
@@ -1800,13 +1919,21 @@
                             <span class="spec-tag">Titanium</span>
                         </div>
                         <div class="product-footer">
-                            <div class="product-price">
-                                <span class="price-currency">$</span>1.850.000
+                            <div class="product-price-row">
+                                <div class="product-price">
+                                    <span class="price-currency">$</span>1.850.000
+                                </div>
                             </div>
-                            <button class="add-to-cart-btn" onclick="addToCart('iPhone 16 Pro Max Gold', 1850000)">
-                                <i class="fas fa-shopping-cart"></i>
-                                Agregar
-                            </button>
+                            <div class="product-actions">
+                                <button class="add-to-cart-btn" onclick="addToCart('iPhone 16 Pro Max Gold', 1850000)">
+                                    <i class="fas fa-shopping-cart"></i>
+                                    Agregar
+                                </button>
+                                <a href="detalles/iphone16pm-desert-gold.html" class="view-more-btn">
+                                    <i class="fas fa-eye"></i>
+                                    Ver más
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -2069,5 +2196,7 @@
 
     <!-- Cart System JS -->
     <script src="../../design-system/cart-system.js"></script>
+    <!-- Micro-interactions -->
+    <script src="../../design-system/interactions.js"></script>
 </body>
 </html>

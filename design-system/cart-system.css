@@ -155,7 +155,7 @@
   padding: 8px 32px 32px 32px;
   background: #ffffff;
   min-height: 200px;
-  max-height: calc(100vh - 400px);
+  max-height: calc(100vh - 240px);
 }
 
 .cart-items::-webkit-scrollbar {
@@ -178,8 +178,8 @@
 /* Individual Cart Item - Nike Clean Style */
 .cart-item {
   display: flex;
-  gap: 16px;
-  padding: 24px 0;
+  gap: 12px;
+  padding: 16px 0;
   background: white;
   border-bottom: 1px solid #e5e5e5;
   margin-bottom: 0;
@@ -187,8 +187,8 @@
 }
 
 .cart-item-image {
-  width: 150px;
-  height: 150px;
+  width: 100px;
+  height: 100px;
   object-fit: cover;
   background: #f7f7f7;
   flex-shrink: 0;
@@ -202,19 +202,19 @@
 }
 
 .cart-item-name {
-  font-size: 15px;
+  font-size: 14px;
   font-weight: 400;
   color: #111111;
-  margin: 0 0 8px 0;
-  line-height: 24px;
+  margin: 0 0 4px 0;
+  line-height: 20px;
   letter-spacing: 0;
 }
 
 .cart-item-price {
-  font-size: 15px;
+  font-size: 14px;
   font-weight: 400;
   color: #111111;
-  margin-bottom: 16px;
+  margin-bottom: 8px;
   letter-spacing: 0;
 }
 
@@ -290,13 +290,13 @@
 
 /* Cart Footer - Nike Compact */
 .cart-footer {
-  padding: 24px 32px 32px 32px;
+  padding: 16px 32px 20px 32px;
   border-top: 1px solid #e5e5e5;
   background: #ffffff;
 }
 
 .cart-totals {
-  margin-bottom: 16px;
+  margin-bottom: 12px;
 }
 
 .cart-subtotal,
@@ -304,13 +304,13 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 8px;
+  margin-bottom: 6px;
 }
 
 .cart-subtotal span:first-child,
 .cart-total span:first-child {
   color: #111111;
-  font-size: 15px;
+  font-size: 13px;
   font-weight: 400;
   letter-spacing: 0;
   text-transform: none;
@@ -318,26 +318,26 @@
 
 .cart-subtotal span:last-child {
   color: #111111;
-  font-size: 15px;
+  font-size: 13px;
   font-weight: 400;
 }
 
 .cart-total {
-  padding-top: 16px;
+  padding-top: 10px;
   border-top: 1px solid #e5e5e5;
   margin-bottom: 0;
-  margin-top: 8px;
+  margin-top: 6px;
 }
 
 .cart-total span:first-child {
   color: #111111;
-  font-size: 15px;
+  font-size: 14px;
   font-weight: 500;
 }
 
 .cart-total span:last-child {
   color: #111111;
-  font-size: 18px;
+  font-size: 15px;
   font-weight: 500;
   letter-spacing: 0;
 }
@@ -345,12 +345,12 @@
 /* Checkout Button - Nike Compact Style */
 .cart-checkout-btn {
   width: 100%;
-  padding: 18px 24px;
+  padding: 14px 20px;
   background: #000000;
   color: white;
   border: none;
   border-radius: 30px;
-  font-size: 15px;
+  font-size: 14px;
   font-weight: 500;
   cursor: pointer;
   display: flex;
@@ -372,7 +372,7 @@
 }
 
 .cart-checkout-btn i {
-  font-size: 16px;
+  font-size: 14px;
 }
 
 /* Empty State - Nike Minimal */
