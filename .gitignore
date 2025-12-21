@@ -23,3 +23,16 @@ desktop.ini
 
 # Logs
 *.log
+
+# Node/Next en vaplux-next
+vaplux-next/node_modules/
+vaplux-next/.next/
+vaplux-next/out/
+
+# Entornos y cachés
+.env
+.env.local
+.env.production
+.env.development
+*.cache
+coverage/
