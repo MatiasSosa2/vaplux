@@ -1,8 +1,21 @@
-# Ignora todo por defecto en el repo raíz
-*
+# Archivos del sistema
+.DS_Store
+Thumbs.db
+desktop.ini
 
-# Permite estos archivos/carpetas
-!.gitignore
-!README.md
-!docs/**
-!vaplux-next/**
+# Node/Next en raíz
+node_modules/
+.next/
+out/
+
+# Entornos y cachés
+.env
+.env.local
+.env.production
+.env.development
+*.cache
+coverage/
+
+# Mantener carpeta de publicación si se usa GitHub Pages
+# (los artefactos de build se copian a docs/)
+docs/
