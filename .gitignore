@@ -1,0 +1,8 @@
+# Ignora todo por defecto en el repo raíz
+*
+
+# Permite estos archivos/carpetas
+!.gitignore
+!README.md
+!docs/**
+!vaplux-next/**
