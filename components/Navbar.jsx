@@ -48,9 +48,9 @@ export default function Navbar(){
   const isContact = router.pathname.startsWith('/contacto')
 
   return (
-    <nav role="navigation" aria-label="Navegación principal" className={`relative w-full z-[2000] nav-glass border-b border-[#E3E8EF] header-underlight`}>
-      <div className={`max-w-6xl mx-auto px-0 md:px-4 py-[0.625rem] grid grid-cols-2 md:grid-cols-3 items-center`}>
-        <div className="flex items-center gap-3 translate-x-0 md:translate-x-[-20%]">
+    <nav role="navigation" aria-label="Navegación principal" className={`sticky top-0 w-full z-[2000] nav-glass border-b border-[#E3E8EF] header-underlight`}>
+      <div className={`max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 py-[0.625rem] grid grid-cols-2 md:grid-cols-3 items-center`}>
+        <div className="flex items-center gap-3">
           <Link href="/" className="inline-flex items-center gap-2">
             <img src={`${router.basePath || ''}/assets/logo.PNG`} alt="Vaplux" className={`h-6 w-6 rounded-md shadow`} />
             <span className={`font-semibold text-[#0f172a] text-[0.95rem] md:text-[1.3rem]`}>Vaplux</span>
@@ -193,7 +193,7 @@ export default function Navbar(){
       {/* menú mobile */}
       {open && (
         <div className="md:hidden border-t border-[#E3E8EF] bg-white/95 backdrop-blur" aria-modal="true" role="dialog">
-          <div ref={mobilePanelRef} className="max-w-6xl mx-auto px-4 py-4 flex flex-col gap-2 text-[#0f172a]">
+          <div ref={mobilePanelRef} className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex flex-col gap-2 text-[#0f172a]">
             {/* Búsqueda mobile fija (arriba del menú) */}
             <div className="flex items-center gap-2 mb-2">
               <span>🔎</span>
@@ -243,7 +243,6 @@ export default function Navbar(){
               </div>
             )}
 
-            <button onClick={() => { toggleCart(); setOpen(false) }} className="hover:underline inline-flex items-center gap-2 mt-2">🛒 <span className={`rounded-full border px-2 py-0.5 text-xs ${totalItems ? 'bg-[#1B98E0]/10 border-[#1B98E0] text-[#1B98E0]' : 'bg-black/5 border-[#E3E8EF] text-[#0f172a]/80'}`}>{totalItems || 0}</span></button>
             <Link href="/contacto" onClick={() => setOpen(false)} className="hover:underline inline-flex items-center gap-2 mt-1">✉️ <span>Contacto</span></Link>
           </div>
         </div>

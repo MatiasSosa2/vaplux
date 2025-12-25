@@ -34,19 +34,19 @@ export default function HeroVisual(){
         />
       </div>
 
-      {/* Overlay limpio con slogan y CTAs, reubicado abajo a la izquierda */}
-      <div className="relative z-10 flex items-end justify-start min-h-[100vh] py-10">
-        <div className="max-w-xl px-6 md:px-10 pb-12 text-left translate-x-[-5%] md:translate-x-0">
+      {/* Overlay limpio con slogan y CTAs, reubicado arriba a la izquierda para evitar solapamiento */}
+      <div className="relative z-10 flex items-start justify-start min-h-[100vh] pt-12 md:pt-16 pb-0">
+        <div className="max-w-xl px-6 md:px-10 text-left translate-x-0">
           <h1 className="heading text-4xl md:text-6xl font-semibold tracking-tight text-[#0f172a]">
             Elegí mejor. 
           </h1>
           <h1 className="heading text-4xl md:text-6xl font-semibold tracking-tight text-[#0f172a] inline-block whitespace-nowrap" ref={vapRef}>
             Elegí Vaplux.
           </h1>
-          <p className="mt-3 text-lg md:text-xl text-[#0f172a]/80 block" style={{ width: vapWidth ? `${vapWidth}px` : undefined }}>
+          <p className="mt-4 md:mt-5 text-lg md:text-xl text-[#0f172a]/80 block" style={{ width: vapWidth ? `${vapWidth}px` : undefined }}>
             Productos premium y servicio confiable.
           </p>
-          <div className="mt-6 flex items-center gap-3">
+          <div className="mt-5 md:mt-6 flex items-center gap-3 flex-wrap">
             <a href="/catalog" className="btn-cta btn-cta-primary">Ver catálogo</a>
             <a href="/contacto" className="px-5 py-3 rounded-md bg-white/90 text-primary border border-mistGray hover:bg-white transition">Contacto</a>
           </div>
