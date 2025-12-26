@@ -9,7 +9,7 @@ const points = [
 
 export default function ServicePrecision(){
   return (
-    <motion.section className="blueprint-grid py-16">
+    <motion.section className="blueprint-grid py-12 md:py-16">
       <div className="max-w-7xl mx-auto px-4 grid md:grid-cols-2 gap-8 items-center">
         <div>
           <h3 className="heading text-white text-3xl font-bold mb-3">Servicio Técnico de Precisión</h3>

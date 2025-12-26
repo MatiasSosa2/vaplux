@@ -53,7 +53,7 @@ export default function ProductCarousel(){
 
   return (
     <section
-      className="relative max-w-7xl mx-auto px-4 py-12 md:py-16"
+      className="relative max-w-7xl mx-auto px-4 py-8 md:py-16"
       role="region"
       aria-roledescription="carousel"
       aria-label="Productos Destacados"

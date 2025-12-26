@@ -49,10 +49,10 @@ export default function Navbar(){
 
   return (
     <nav role="navigation" aria-label="Navegación principal" className={`sticky top-0 w-full z-[2000] nav-glass border-b border-[#E3E8EF] header-underlight`}>
-      <div className={`max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 py-[0.625rem] grid grid-cols-2 md:grid-cols-3 items-center`}>
+      <div className={`max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 py-[0.8125rem] grid grid-cols-2 md:grid-cols-3 items-center`}>
         <div className="flex items-center gap-3">
           <Link href="/" className="inline-flex items-center gap-2">
-            <img src={`${router.basePath || ''}/assets/logo.PNG`} alt="Vaplux" className={`h-6 w-6 rounded-md shadow`} />
+            <img src={`${router.basePath || ''}/assets/logo.PNG`} alt="Vaplux" className={`h-8 w-8 rounded-md shadow`} />
             <span className={`font-semibold text-[#0f172a] text-[0.95rem] md:text-[1.3rem]`}>Vaplux</span>
           </Link>
         </div>

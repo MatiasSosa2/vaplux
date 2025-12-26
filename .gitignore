@@ -8,6 +8,9 @@ node_modules/
 .next/
 out/
 
+# Vercel
+.vercel/
+
 # Entornos y cachés
 .env
 .env.local
@@ -16,6 +19,18 @@ out/
 *.cache
 coverage/
 
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
 # Mantener carpeta de publicación si se usa GitHub Pages
 # (los artefactos de build se copian a docs/)
 docs/
+
+# Editor
+.vscode/
+
+# Python caches (scripts en tools/)
+**/__pycache__/
+*.pyc

@@ -45,7 +45,7 @@ export default function ServiceGallery(){
 
   return (
     <section className="relative bg-white" onMouseEnter={() => setPaused(true)} onMouseLeave={() => setPaused(false)}>
-      <div className="max-w-7xl mx-auto px-4 py-12">
+      <div className="max-w-7xl mx-auto px-4 py-10">
         <div className="overflow-hidden rounded-2xl">
           <div className="flex transition-transform duration-700" style={{ transform: `translateX(-${index * 100}%)` }}>
             {SLIDES.map(s => (

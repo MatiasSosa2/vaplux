@@ -35,7 +35,7 @@ export default function HeroVisual(){
       </div>
 
       {/* Overlay limpio con slogan y CTAs, reubicado arriba a la izquierda para evitar solapamiento */}
-      <div className="relative z-10 flex items-start justify-start min-h-[100vh] pt-12 md:pt-16 pb-0">
+      <div className="relative z-10 flex items-start justify-start min-h-[100vh] pt-8 md:pt-16 pb-0">
         <div className="max-w-xl px-6 md:px-10 text-left translate-x-0">
           <h1 className="heading text-4xl md:text-6xl font-semibold tracking-tight text-[#0f172a]">
             Elegí mejor. 
